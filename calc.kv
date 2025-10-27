@@ -1,4 +1,12 @@
-#:kivy
+#:kivy 2.0.0
+
+<Label>:
+    font_name: app.get_font()
+
+<Button>:
+    font_name: app.get_font(bold=True)
+    font_size: '22sp'
+
 <CalcLayout>:
     orientation: "vertical"
     padding: dp(12)
@@ -21,7 +29,7 @@
             text_size: self.width - dp(10), None
             halign: "left"
             valign: "center"
-            font_size: '36sp'
+            font_size: '28sp'
             shorten: True
             color: (1,1,1,1)
 
@@ -34,19 +42,15 @@
         Button:
             text: "C"
             on_release: root.clear()
-            font_size: '20sp'
         Button:
             text: "<-"
             on_release: root.backspace()
-            font_size: '20sp'
         Button:
             text: "("
             on_release: root.append_text("(")
-            font_size: '20sp'
         Button:
             text: ")"
             on_release: root.append_text(")")
-            font_size: '20sp'
 
         Button:
             text: "7"
@@ -60,7 +64,6 @@
         Button:
             text: "÷"
             on_release: root.append_text("/")
-            font_size: '24sp'
 
         Button:
             text: "4"
@@ -74,7 +77,6 @@
         Button:
             text: "×"
             on_release: root.append_text("*")
-            font_size: '24sp'
 
         Button:
             text: "1"
@@ -88,12 +90,10 @@
         Button:
             text: "-"
             on_release: root.append_text("-")
-            font_size: '28sp'
 
         Button:
             text: "."
             on_release: root.append_text(".")
-            font_size: '24sp'
         Button:
             text: "0"
             on_release: root.append_text("0")
@@ -103,7 +103,6 @@
         Button:
             text: "+"
             on_release: root.append_text("+")
-            font_size: '28sp'
 
     BoxLayout:
         size_hint_y: None
@@ -112,14 +111,11 @@
         Button:
             text: "^"
             on_release: root.append_text("**")
-            font_size: '18sp'
         Button:
             text: "±"
             on_release: root.negate()
-            font_size: '22sp'
         Button:
             text: "="
             on_release: root.calculate()
             background_normal: ''
             background_color: (0.11, 0.6, 0.95, 1)
-            font_size: '22sp'
